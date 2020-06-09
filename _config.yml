@@ -5,7 +5,7 @@ header-img: img/unsplash/eliska-motisova-QsE_tmInp_E-unsplash.jpg
 email: inquiry@wizecore.com
 description: "Digital services consultancy agency"
 keyword: "graylog, serverless, java"
-url: "https://wizecore.github.io" # your host, for absolute URL
+url: "https://wizecore.com" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 collections:
   projects:
