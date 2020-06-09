@@ -1,0 +1,36 @@
+---
+layout: page
+title: "Projects"
+description: "Featured completed projects and open-source resources."
+order: 1
+---
+
+{% for project in site.projects %}
+<div class="post-preview">
+    <a href="{{ project.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ project.title }}
+        </h2>
+        {% if project.subtitle %}
+        <h3 class="post-subtitle">
+            {{ project.subtitle }}
+        </h3>
+        {% endif %}
+        {% if project.preview %}
+        <div class="post-content-preview">
+            {{ project.preview }}
+        </div>
+        {% else %}
+        <div class="post-content-preview">
+            {{ project.content | strip_html | truncate:300 }}
+        </div>
+        {% endif %}
+
+    </a>
+    <p class="post-meta">
+        Posted by {% if project.author %}{{ project.author }}{% else %}{{ site.title }}{% endif %} on
+        {{ project.date | date: "%B %-d, %Y" }}
+    </p>
+</div>
+<hr>
+{% endfor %}
