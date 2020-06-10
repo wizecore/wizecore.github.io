@@ -5,14 +5,14 @@
 
 {% if include.type == 'post' %}
 <style type="text/css">
-    header.intro-header{
+    header.intro-header {
         position: relative;
         background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
         background: {{ page.header-bg-css }};
     }
 
     {% if page.header-mask %}
-    header.intro-header .header-mask{
+    header.intro-header .header-mask {
         width: 100%;
         height: 100%;
         position: absolute;
@@ -30,6 +30,12 @@
     <div class="header-img-credit">
         Image by <a href="//{{page.header-img-credit-href}}">{{page.header-img-credit}}</a>
     </div>
+    {% else %}
+    {% if site.header-img-credit %}
+    <div class="header-img-credit">
+        Image by <a href="//{{site.header-img-credit-href}}">{{site.header-img-credit}}</a>
+    </div>
+    {% endif %}
     {% endif %}
     <div class="container">
         <div class="row">
@@ -92,6 +98,33 @@
 
 {% if include.type == 'page' %}
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+  {% if page.header-mask %}
+  <style type="text/css">
+  header.intro-header .header-mask {
+      width: 100%;
+      {% if include.short %}
+      height: 227px;
+      {% else %}
+      height: 417px;
+      {% endif %}
+      position: absolute;
+      background: rgba(0,0,0, {{ page.header-mask }});
+  }
+  </style>
+  <div class="header-mask"></div>
+  {% endif %}
+
+  {% if page.header-img-credit %}
+  <div class="header-img-credit">
+      Image by <a href="//{{page.header-img-credit-href}}">{{page.header-img-credit}}</a>
+  </div>
+  {% else %}
+  {% if site.header-img-credit %}
+  <div class="header-img-credit">
+      Image by <a href="//{{site.header-img-credit-href}}">{{site.header-img-credit}}</a>
+  </div>
+  {% endif %}
+  {% endif %}
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

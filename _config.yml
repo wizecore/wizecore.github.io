@@ -1,7 +1,9 @@
 # Site settings
 title: Wizecore
 SEOTitle: Wizecore | Technology, agile and product management
-header-img: img/unsplash/eliska-motisova-QsE_tmInp_E-unsplash.jpg
+header-img: img/unsplash/josh-riemer-flRN6KYpl1A-unsplash.jpg
+header-img-credit: "Josh Riemer on Unsplash"
+header-img-credit-href: "https://unsplash.com/@joshriemer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
 email: inquiry@wizecore.com
 description: "Digital services consultancy agency"
 keyword: "graylog, serverless, java"
