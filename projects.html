@@ -9,7 +9,10 @@ description: "Featured completed projects and open-source resources."
 order: 1
 ---
 
-{% for project in site.projects %}
+{%- assign _sorted_list = site.projects -%}
+{%- assign _sorted_list = _sorted_list | sort: 'date' -%}
+{%- assign _sorted_list = _sorted_list | reverse -%}
+{% for project in _sorted_list %}
 <div class="post-preview">
     <a href="{{ project.url | prepend: site.baseurl }}">
         <h2 class="post-title">
