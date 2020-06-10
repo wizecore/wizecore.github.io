@@ -18,6 +18,14 @@
         position: absolute;
         background: rgba(0,0,0, {{ page.header-mask }});
     }
+
+    @media only screen and (min-width: 768px) {
+      {% if include.short %}
+      height: 227px;
+      {% else %}
+      height: 249px !important;
+      {% endif %}
+    }
     {% endif %}
 </style>
 {% if page.header-style == 'text' %}
@@ -105,17 +113,26 @@
       {% if include.short %}
       height: 227px;
       {% else %}
-      height: 417px;
+      height: 419px;
       {% endif %}
       position: absolute;
       background: rgba(0,0,0, {{ page.header-mask }});
+  }
+  @media only screen and (max-width: 768px) {
+    header.intro-header .header-mask {
+      {% if include.short %}
+      height: 214px;
+      {% else %}
+      height: 250px !important;
+      {% endif %}
+    }
   }
   </style>
   <div class="header-mask"></div>
   {% endif %}
 
   {% if page.header-img-credit %}
-  <div class="header-img-credit">
+  <div class="header-img-credit{% if include.short %} header-img-credit-short{% endif %}">
       Image by <a href="//{{page.header-img-credit-href}}">{{page.header-img-credit}}</a>
   </div>
   {% else %}

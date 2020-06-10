@@ -687,6 +687,10 @@ samp {
 .postlist-container {
   margin-bottom: 15px;
 }
+.postlist-container .anchorjs-link {
+  position: absolute;
+  text-decoration: none !important;
+}
 .post-container a {
   color: #337ab7;
 }
@@ -1163,6 +1167,19 @@ samp {
     font-size: 12px;
     bottom: 10px;
     right: 15px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .intro-header .header-img-credit {
+    top: 220px;
+  }
+}
+.intro-header .header-img-credit-short {
+  top: 200px;
+}
+@media only screen and (max-width: 768px) {
+  .intro-header .header-img-credit-short {
+    top: 190px;
   }
 }
 .post-preview > a {

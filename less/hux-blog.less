@@ -146,6 +146,12 @@ samp {
 // In the list of posts
 .postlist-container {
   margin-bottom: 15px;
+
+  .anchorjs-link {
+    // I can not understand this but this made anchor always in the same line as title
+    position: absolute;
+    text-decoration: none !important;
+  }
 }
 
 // In the post.
@@ -629,6 +635,16 @@ samp {
         bottom: 10px;
         right: 15px;
       }
+    }
+    @media only screen and (max-width: 768px) {
+      top: 220px;
+    }
+  }
+  .header-img-credit-short {
+    top: 200px;
+
+    @media only screen and (max-width: 768px) {
+      top: 190px;
     }
   }
 }

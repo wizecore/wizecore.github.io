@@ -51,18 +51,8 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-# Disqus settings
-# disqus_username: hux
-
-# Netease settings
-netease_comment: false
-
-# Analytics settings
-# Baidu Analytics
-# ba_track_id: [your track id]
-
 # Google Analytics
-ga_track_id: "UA-49627206-1" # Format: UA-xxxxxx-xx
+ga_track_id: "UA-83335142-1" # Format: UA-xxxxxx-xx
 ga_domain: wizecore.com
 
 # Progressive Web Apps

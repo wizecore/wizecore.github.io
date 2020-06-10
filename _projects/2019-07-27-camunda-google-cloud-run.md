@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "Camunda BPM on Google Cloud Run"
-subtitle: "Run Camunda "
+subtitle: "Run Camunda in cloud in 5 minutes"
 preview: "It was never more easy to run Camunda BPM in the cloud."
 author: "Ruslan Gainutdinov"
 header-style: text

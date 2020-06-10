@@ -1,7 +1,7 @@
 ---
 title: Archive
 layout: default
-description: keep hungry keep foolish
+description: "Imagination will often carry us to worlds that never were."
 header-img: "img/unsplash/jan-kahanek-fVUl6kzIvLg-unsplash.jpg"
 header-img-credit: "Jan Kahánek on Unsplash"
 header-img-credit-href: "https://unsplash.com/@honza_kahanek"
@@ -25,16 +25,21 @@ https://github.com/kitian616/jekyll-TeXt-theme
 			<div id='tag_cloud' class="tags tags-sup js-tags">
 				<a class="tag-button--all" data-encode="">
 					Show All
-					<sup>{{site.posts.size}}</sup>
+					<sup>{{site.projects.size}}</sup>
 				</a>
 
+				{% assign rawtags = "" %}
+				{% for post in site.projects %}
+				{% assign ttags = post.tags | join:'|' | append:'|' %}
+				{% assign rawtags = rawtags | append:ttags %}
+				{% endfor %}
+				{% assign rawtags = rawtags | split:'|' | sort | uniq %}
+
 				{% capture tags %}
-				{% for tag in site.tags %}
-				<a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}"
-					data-encode="{{ tag[0] | strip | url_encode }}" class="tag-button" title="{{ tag[0] }}"
-					rel="{{ tag[1].size }}">
-					{{ tag[0] }}
-					<sup>{{tag[1].size}}</sup>
+				{% for tag in rawtags %}
+				<a data-sort="{{ site.projects.size | minus: 1 | prepend: '0000' | slice: -4, 4 }}"
+					data-encode="{{ tag | strip | url_encode }}" class="tag-button" title="{{ tag }}" rel="1">
+					{{ tag }}
 				</a>__SEPERATOR__
 				{% endfor %}
 				{% endcapture %}
@@ -43,7 +48,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
 
 			<!-- Article List -->
 			<div class="mini-post-list js-result d-none">
-				{%- assign _sorted_list = site.posts -%}
+				{%- assign _sorted_list = site.projects -%}
 				{%- assign _sorted_list = _sorted_list | sort: 'date' -%}
 				{%- assign _sorted_list = _sorted_list | reverse -%}
 

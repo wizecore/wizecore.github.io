@@ -1,7 +1,8 @@
 ---
 layout: page
-description: "Digital solutions"
+description: "Digital services consultancy agency"
 header-mask: 0.5
+hide-in-nav: true
 ---
 
 <div class="en post-container">
@@ -9,7 +10,10 @@ header-mask: 0.5
     {{ index | markdownify }}
 </div>
 
-{% for post in paginator.posts %}
+{%- assign _sorted_list = site.projects -%}
+{%- assign _sorted_list = _sorted_list | sort: 'date' -%}
+{%- assign _sorted_list = _sorted_list | reverse -%}
+{% for post in _sorted_list %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
